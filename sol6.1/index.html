@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple student countdown tracker for deadlines, hackathons, exams and events.">
+  <title>Show Up | Student Event Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="page-header">
+    <p class="eyebrow">STUDENT EVENT TRACKER</p>
+    <h1>Show Up.</h1>
+    <p>Everything I need to show up for, and everything I want to.</p>
+  </header>
+  <main>
+    <section class="form-section">
+      <h2 id="form-heading">Add an event</h2>
+      <p class="section-note">One less date to keep in your head.</p>
+      <form id="event-form">
+        <div class="field name-field">
+          <label for="event-name">Event name</label>
+          <input id="event-name" type="text" placeholder="e.g. Web development assignment" required>
+        </div>
+        <div class="field">
+          <label for="event-date">Date</label>
+          <input id="event-date" type="date" required>
+        </div>
+        <div class="field">
+          <label for="event-type">Type</label>
+          <select id="event-type">
+            <option value="deadline">Deadline</option>
+            <option value="hackathon">Hackathon</option>
+            <option value="exam">Exam</option>
+            <option value="event">Event</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button id="submit-button" class="primary-button" type="submit">Add event</button>
+          <button id="cancel-button" type="button" hidden>Cancel</button>
+        </div>
+      </form>
+    </section>
+    <section class="events-section">
+      <div class="section-heading">
+        <h2>Your upcoming dates</h2>
+        <p class="section-note">Nearest dates first.</p>
+      </div>
+      <div class="summary">
+        <p><strong id="total-count">0</strong> Total events</p>
+        <p><strong id="week-count">0</strong> Due in next 7 days</p>
+        <p><strong id="overdue-count">0</strong> Overdue</p>
+      </div>
+      <div class="tabs">
+        <button type="button" class="tab active" data-type="all">All</button>
+        <button type="button" class="tab" data-type="deadline">Deadlines</button>
+        <button type="button" class="tab" data-type="hackathon">Hackathons</button>
+        <button type="button" class="tab" data-type="exam">Exams</button>
+        <button type="button" class="tab" data-type="event">Events</button>
+      </div>
+      <div id="event-list" class="cards"></div>
+      <p id="empty-message" class="empty-message">No events yet. Add your first date above.</p>
+    </section>
+  </main>
+  <footer>Show Up. &mdash; A little planning goes a long way.</footer>
+</body>
+</html>
